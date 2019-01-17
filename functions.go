@@ -8,6 +8,8 @@ import (
 
 	//"strconv" // https://golang.org/pkg/strconv/
   "strings"
+
+  //"reflect" // Determine element type
 )
 
 
@@ -16,9 +18,18 @@ import (
 func arrayFlatten( inputArray [][][]int ) []int {
   // Example Input: [][][]int{ { {1}, {2}, {3} }, { {4} } }
 
-  // for
+  returnArray := []int{}
 
-  returnArray := []int{1,2,3,4,5,6} // Debug
+  // Could make a function that calls itself for recursion, but we have a predictable multidimensional array here
+  for i := 0; i < len(inputArray); i++ {
+    for j := 0; j < len(inputArray[i]); j++ {
+      for k := 0; k < len(inputArray[i][j]); k++ {
+        returnArray = append(returnArray, inputArray[i][j][k])
+      }
+    }
+  }
+
+  //returnArray := []int{1,2,3,4,5,6} // Debug
   return returnArray
 }
 // ========== END: arrayFlatten ========== ========== ========== ==========

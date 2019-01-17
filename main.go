@@ -105,7 +105,7 @@ func main() {
     "  " + cMagenta + "func " + cBlue + "arrayFlatten" + cClr + "( " + cCyan + "inputArray" + cClr + " ) " + cCyan + "outputArray" + cClr + " {}" + breakspace +
     breakspace +
     cBold + cCyan + "  Input:" + cClr + breakspace +
-    "  [[1,2,[3]],4] -> Converted to Golang Multi Dimensional Array" + breakspace ) // input: [[1,2,[3]],4]
+    "  [[1,2,[3]],4]" + breakspace ) // input: [[1,2,[3]],4]
 
   // Generation of the input value ( [[1,2,[3]],4] )
   var input = [][][]int{ { {1}, {2}, {3} }, { {4} } }

@@ -3,7 +3,7 @@ package main
 
 import (
   "testing"
-  "fmt"
+  //"fmt"
   //"strings"
   //"reflect"
 )
@@ -23,7 +23,7 @@ func testArrayFlatten( input [][][]int, expectedResult []int, t *testing.T ) {
 
   //result := Add(12,28)
   result := arrayFlatten(input)
-  t.Log( "DEBUG: result = [" + arrayToString(result, ",") + "]" ) // Debug  
+  t.Log( "DEBUG: result = [" + arrayToString(result, ",") + "]" ) // Debug
 
   // Reflect is one way to check array equality, but we'll be using our arrayToString for comparisons
   //if reflect.DeepEqual(expectedResult, result) {
@@ -40,15 +40,15 @@ func TestArrayFlatten2(t *testing.T) { testArrayFlatten( [][][]int{ { {1}, {2}, 
 
 // ========== START: Benchmark arrayFlatten ========== ========== ========== ==========
 // Make the base benchmark private (lower case letter) then have the other functions invoke it for testing
-func benchmarkArrayFlatten( s string, b *testing.B ) {
+func benchmarkArrayFlatten( input [][][]int, b *testing.B ) {
   // Put any initialization before timer reset
   b.ResetTimer()
   for i := 0; i < b.N; i++ {
-    fmt.Sprintf("hello, " + s)
+    arrayFlatten(input)
   }
 }
-func BenchmarkArrayFlatten1(b *testing.B) { benchmarkArrayFlatten("111111111111111111111111111111111111111111111111111111111111111111111111111111", b) }
-func BenchmarkArrayFlatten2(b *testing.B) { benchmarkArrayFlatten("222", b) }
+func BenchmarkArrayFlatten1(b *testing.B) { benchmarkArrayFlatten( [][][]int{ { {1}, {2}, {3} }, { {4} } }, b ) }
+func BenchmarkArrayFlatten2(b *testing.B) { benchmarkArrayFlatten( [][][]int{ { {1}, {2}, {3} }, { {4} }, { {5, 6} } }, b ) }
 // ========== END: Benchmark arrayFlatten ========== ========== ========== ==========
 
 
