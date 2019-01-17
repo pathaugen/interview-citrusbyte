@@ -11,12 +11,15 @@ interview-citrusbyte
 
 interview-citrusbyte: citrusbyte interview question expanded to a public repo.
 
+![App Screenshot](assets/images/appimage.jpg)
+
 Features:
 * [x] Golang utilized for single binary without dependencies
 * [x] Console Application
 * [x] Console color support
 * [x] Application splash logo
 * [x] Testing framework
+* [x] Benchmarking framework
 
 Installation and Running (from a directory of your choice):
 * > $ git clone https://github.com/pathaugen/interview-citrusbyte
